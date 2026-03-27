@@ -24,6 +24,27 @@ Campos relevantes en `assessment_session`:
 - Java 21
 - Node.js 18+
 - PostgreSQL (en tu caso corre en `localhost:5433`)
+- Ollama instalado y activo (para analisis completo con `gemma3:4b`)
+- Ollama instalado y activo (modelo recomendado local: `phi3:mini`)
+
+## Configurar Ollama (analisis cognitivo)
+
+En una terminal:
+
+```bash
+ollama pull phi3:mini
+ollama run phi3:mini
+```
+
+El backend llama por defecto a:
+
+- URL: `http://localhost:11434/api/generate`
+- Modelo: `phi3:mini`
+
+Puedes cambiarlo con variables/properties:
+
+- `ollama.url`
+- `ollama.model`
 
 ## Variables de entorno (Git Bash)
 
@@ -89,22 +110,6 @@ ORDER BY created_at DESC
 LIMIT 10;
 ```
 
-## Commit paso a paso
-
-Desde la raiz `EternaMente`:
-
-```bash
-git status
-git add README.md
-git commit -m "docs: add run and commit guide for local setup"
-git status
-```
-
-Si quieres subirlo al remoto:
-
-```bash
-git push
-```
 
 ## Notas utiles
 
